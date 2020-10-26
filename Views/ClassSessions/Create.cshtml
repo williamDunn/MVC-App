@@ -1,0 +1,54 @@
+@model AZIPPYFITNESS.Models.ClassSession
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>ClassSession</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="classSessionId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="classSessionId" class="form-control" />
+                <span asp-validation-for="classSessionId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="fitnessClassId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="fitnessClassId" class ="form-control" asp-items="ViewBag.fitnessClassId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="classSessionStartTime" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="classSessionStartTime" class="form-control" />
+                <span asp-validation-for="classSessionStartTime" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="locationId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="locationId" class ="form-control" asp-items="ViewBag.locationId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

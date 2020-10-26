@@ -1,0 +1,71 @@
+@model AZIPPYFITNESS.Models.FitnessClass
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>FitnessClass</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="fitnessclassId" />
+        <div class="form-group">
+            <label asp-for="fitnessclassTitle" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="fitnessclassTitle" class="form-control" />
+                <span asp-validation-for="fitnessclassTitle" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="fitnessclassDescription" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="fitnessclassDescription" class="form-control" />
+                <span asp-validation-for="fitnessclassDescription" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="fitnessclassDuration" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="fitnessclassDuration" class="form-control" />
+                <span asp-validation-for="fitnessclassDuration" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="fitnessclassCaloriesBurnedApprox" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="fitnessclassCaloriesBurnedApprox" class="form-control" />
+                <span asp-validation-for="fitnessclassCaloriesBurnedApprox" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="fitnessclassMaxEnrollees" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="fitnessclassMaxEnrollees" class="form-control" />
+                <span asp-validation-for="fitnessclassMaxEnrollees" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="fitnessclassFee" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="fitnessclassFee" class="form-control" />
+                <span asp-validation-for="fitnessclassFee" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

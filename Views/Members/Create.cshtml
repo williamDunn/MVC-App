@@ -1,0 +1,158 @@
+@model AZIPPYFITNESS.Models.Member
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Register a New Member</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>Complete the following for the new member:</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="memberId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="memberId" class="form-control" />
+                <span asp-validation-for="memberId" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="lastName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="lastName" class="form-control" />
+                <span asp-validation-for="lastName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="firstName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="firstName" class="form-control" />
+                <span asp-validation-for="firstName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="streetAddress" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="streetAddress" class="form-control" />
+                <span asp-validation-for="streetAddress" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="city" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="city" class="form-control" />
+                <span asp-validation-for="city" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="state" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="state" class="form-control" />
+                <span asp-validation-for="state" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="zipCode" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="zipCode" class="form-control" />
+                <span asp-validation-for="zipCode" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="emailAddress" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="emailAddress" class="form-control" />
+                <span asp-validation-for="emailAddress" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="phoneHome" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="phoneHome" class="form-control" />
+                <span asp-validation-for="phoneHome" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="phoneCell" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="phoneCell" class="form-control" />
+                <span asp-validation-for="phoneCell" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="membershipTypeId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="membershipTypeId" class ="form-control" asp-items="ViewBag.membershipTypeId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="employerCompanyName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="employerCompanyName" class="form-control" />
+                <span asp-validation-for="employerCompanyName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="employerPhoneNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="employerPhoneNumber" class="form-control" />
+                <span asp-validation-for="employerPhoneNumber" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="membershipStatusId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="membershipStatusId" class ="form-control" asp-items="ViewBag.membershipStatusId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="emergencyContactName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="emergencyContactName" class="form-control" />
+                <span asp-validation-for="emergencyContactName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="emergencyContactPhone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="emergencyContactPhone" class="form-control" />
+                <span asp-validation-for="emergencyContactPhone" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="emergencyContactRelationship" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="emergencyContactRelationship" class="form-control" />
+                <span asp-validation-for="emergencyContactRelationship" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="currentAmountOwed" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="currentAmountOwed" class="form-control" />
+                <span asp-validation-for="currentAmountOwed" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="primaryLocationId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="primaryLocationId" class ="form-control" asp-items="ViewBag.primaryLocationId"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Enroll this new member!" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
